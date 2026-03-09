@@ -1,29 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>View main.tex</title>
+<title>Full LaTeX Preview</title>
+<script src="https://cdn.jsdelivr.net/npm/latex.js/dist/latex.min.js"></script>
 <style>
-body {
-    font-family: monospace;
-    white-space: pre;
-    margin: 20px;
-}
+body { font-family: 'Times New Roman', serif; padding: 20px; line-height: 1.5; }
+#preview { border: 1px solid #ccc; padding: 20px; min-height: 400px; }
+h1, h2, h3 { margin-top: 1em; }
 </style>
 </head>
 <body>
 
-<div id="content">Loading main.tex...</div>
+<h1>LaTeX Document Preview</h1>
+<div id="preview">Loading...</div>
 
 <script>
-fetch("main.tex")
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById("content").textContent = data;
-  })
-  .catch(err => {
-    document.getElementById("content").textContent = "Could not load main.tex";
-  });
+fetch('main.tex')
+.then(response => response.text())
+.then(tex => {
+    const generator = new latexjs.HtmlGenerator({ hyphenate: false });
+    const latex = latexjs.parse(tex, { generator: generator }).htmlDocument();
+    document.getElementById('preview').innerHTML = latex.body.innerHTML;
+})
+.catch(err => {
+    document.getElementById('preview').textContent = 'Failed to load main.tex: ' + err;
+});
 </script>
 
 </body>
