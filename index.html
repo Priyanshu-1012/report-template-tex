@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>View main.tex</title>
+<style>
+body {
+    font-family: monospace;
+    white-space: pre;
+    margin: 20px;
+}
+</style>
+</head>
+<body>
+
+<div id="content">Loading main.tex...</div>
+
+<script>
+fetch("main.tex")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("content").textContent = data;
+  })
+  .catch(err => {
+    document.getElementById("content").textContent = "Could not load main.tex";
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{amsmath}
+\usepackage{mhchem}
+\usepackage{siunitx}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{geometry}
+\usepackage{tikz}
+\usepackage[colorlinks=true, citecolor=blue, linkcolor=blue]{hyperref}
+\usepackage{cleveref}
+\usepackage[backend=biber,style=numeric,sorting=none]{biblatex}
+\addbibresource{references.bib}
+\usepackage{lipsum} 
+\geometry{margin=1in}
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+\begin{tikzpicture}[remember picture,overlay]
+  \node[anchor=north west, xshift=1cm, yshift=-1cm] at (current page.north west) {\includegraphics[height=2.2cm]{logo/tu_dresden_logo.png}};
+  \node[anchor=north east, xshift=-1cm, yshift=-1.3cm] at (current page.north east) {\includegraphics[height=1.5cm]{logo/ihm-logo.png}};
+\end{tikzpicture}
+
+\vspace*{3cm} 
+
+
+  {\Huge \bfseries Title\par}  
+  \vspace{3em}
+  {\LARGE
+  
+  \vspace{1em}
+  Thesis\par}
+   \vspace{3em}
+   {\large \vspace{1.5em}
+    Submitted by \par}
+   {\large
+    \textbf{Priyanshu Pathak}\par}
+    \vspace{1.5cm}
+
+   
+   {\large
+    Institute of Semiconductors and Microsystems\\
+    \textbf{TU Dresden}\par}
+    \vspace{1.5cm}
+\vspace{0.5cm}
+
+    {\large
+     
+    \textbf{Supervisor}:  xyz\\
+    \textbf{Supervising Professor}: abc \par}
+    \vfill
+    \vspace{0.5cm}
+    {\large
+    March 20xx\par}
+\end{titlepage} 
+\clearpage
+%============================================================
+%=========================Abs==============================
+
+
+\pagenumbering{roman}\setcounter{page}{1}
+\section*{Abstract}
+\addcontentsline{toc}{section}{Abstract}
+
+
+\clearpage
+%============================================================
+%==========================TOC==============================
+
+
+\tableofcontents
+\listoffigures
+\listoftables
+\clearpage
+\nocite{*}
+\pagenumbering{arabic}\setcounter{page}{1}
+%============================================================
+%=========================================================
+
+
+\printbibliography
+List any sources cited.
+
+
+\end{document}
