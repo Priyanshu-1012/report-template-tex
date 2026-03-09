@@ -11,16 +11,7 @@ iframe { width: 100%; height: 90vh; border: 1px solid #ccc; }
 <body>
 
 <h1>LaTeX PDF Preview</h1>
-<iframe id="pdfPreview" src="main.pdf"></iframe>
-
-<script>
-// auto-refresh every 5 seconds to reflect recompile
-setInterval(() => {
-    const iframe = document.getElementById('pdfPreview');
-    const src = iframe.src.split('?')[0]; 
-    iframe.src = src + '?t=' + new Date().getTime(); // cache-busting
-}, 5000);
-</script>
+<iframe src="main.pdf"></iframe>
 
 </body>
 </html>
